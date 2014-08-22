@@ -23,7 +23,11 @@ $(function () {
 				var modal = $('#' + id),
 				    self = this;
 				modal.on('hidden.bs.modal', function () {
-					modal.data('yg.launcher').removeData('yg.modal');
+					var launcher = modal.data('yg.launcher');
+					if(modal.find('form').length == 0 && launcher.data('modalSuccessRise')){
+						launcher.trigger(launcher.data('modalSuccessRise'), []);
+					}
+					launcher.removeData('yg.modal');
 					modal.data('bs.modal', null).remove();
 				}).on('shown.bs.modal', function () {
 					var shownModalsCount = $('.modal-backdrop.fade.in').length;

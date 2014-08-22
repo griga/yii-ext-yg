@@ -14,7 +14,7 @@ class ModalRemoteLink extends \CWidget
     public $label;
     public $href;
     public $ajaxVar = 'ajax=1';
-    public $htmlOptions = array();
+    public $htmlOptions =[];
 
     public function run()
     {
