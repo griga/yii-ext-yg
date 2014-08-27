@@ -12,6 +12,7 @@ Yii::import('zii.widgets.grid.CDataColumn');
 class SortColumn extends \CDataColumn
 {
     public $action;
+    public $filter = false;
 
     public function init()
     {
